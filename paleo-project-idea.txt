@@ -1,0 +1,10 @@
+1.For Dinosauria there are 8349 unique reference numbers in the data extracted from Paleobiology Database
+2. For Canidae there are 1489 unique reference numbers in the data extracted from Paleobiology Database
+3. For Hominoidea there are 374 unique reference numbers in the data extracted from Paleobiology Database
+
+final shell command used to extract relevant reference numbers was : 
+cut -d "," -f 17 Hominoidea.csv | tail -n +18 | uniq | wc -l
+
+I used the cutcommand to cut along the comma-seperated values in the file(csv file) and then took the 17th column which contained the reference numbers for the species.
+I used the tail command to ignore the first 18 lines which was just additional information like the url. After that I used the uniq command to filter out the repeated reference
+numbers and obtained the count of this final list by using the wc -l command. 
