@@ -1,0 +1,1 @@
+The purpose of this final project is to demonstrate the extent and knowledge of my programming skills in a biological context. For this project I will be using performing operations in the shell, using python to read/write files, and using R to manipulate and visualize data. 
