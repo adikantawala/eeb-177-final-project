@@ -5,6 +5,17 @@
 final shell command used to extract relevant reference numbers was : 
 cut -d "," -f 17 Hominoidea.csv | tail -n +18 | uniq | wc -l
 
-I used the cutcommand to cut along the comma-seperated values in the file(csv file) and then took the 17th column which contained the reference numbers for the species.
+I used the cut command to cut along the comma-seperated values in the file(csv file) and then took the 17th column which contained the reference numbers for the species.
 I used the tail command to ignore the first 18 lines which was just additional information like the url. After that I used the uniq command to filter out the repeated reference
 numbers and obtained the count of this final list by using the wc -l command. 
+
+
+-----------------------
+2/14 office hours 
+1. For Dinosauria there are 2893 unique species in the data set. 
+
+To extract this number I used:
+tail -n +18 Dinosauria.csv |cut -d "," -f 1-6,8-17 |grep "species"|cut -d "," -f 9|sort |uniq |wc -l 
+assuming that I should use the accpeted_rank to determine if the ranking actually went all the way down to the species level(based of Gaurav's suggestion). Since identified rank was causing 
+problems with me using grep, the first thing I did was cut out that column. With the new data set minus the identidfied_rank column I searched for the species 
+with the identified_rank of species. Based of that I cut the species_name coulmn and sorted it so I could get the unique value count of unique familes. 
