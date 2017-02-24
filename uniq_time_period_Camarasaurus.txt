@@ -1,0 +1,7 @@
+      1 "Late Aptian"
+      2 "Late Jurassic"
+      2 "Late Oxfordian"
+      3 "Early Tithonian"
+      5 "Tithonian"
+      8 "Late Kimmeridgian"
+     63 "Kimmeridgian"
