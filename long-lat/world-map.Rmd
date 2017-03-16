@@ -1,0 +1,32 @@
+---
+title: "long-lat-r-graph"
+author: "Adi Kantawala"
+date: "March 15, 2017"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+library(maps)
+
+world_map <- map_data("world")
+
+plot <- ggplot() + coord_fixed() +
+  xlab("") + ylab("")
+
+
+
+#Add map to base plot
+actual_world <- plot + geom_polygon(data=world_map, aes(x=long, y=lat, group=group), colour="black", fill="white")
+
+actual_world
+#reading in my longitude data and latitude data
+dino <- read.csv("/home/eeb177-student/Desktop/eeb-177/final-project/long-lat/output_lat_long.csv", header = T, as.is = T)
+names(dino)<- c("lat", "long")
+
+map_data <- actual_world + geom_point(data=dino,aes(x=long, y=lat), colour="Blue",pch=2, size=0.1, alpha=I(1)) + labs(title = "Fossil Records on World Map", x = "Longitude", y = "Latitude") + theme(plot.title = element_text(hjust = 0.5, size=18, face = "bold"), axis.title =element_text(size=10))
+
+map_data
+
+
+```
